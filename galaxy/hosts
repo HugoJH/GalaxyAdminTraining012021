@@ -1,0 +1,2 @@
+[galaxyservers]
+gat-35.eu.training.galaxyproject.eu  ansible_user=ubuntu
