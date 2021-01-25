@@ -1,0 +1,2 @@
+[my_hosts]
+192.52.37.133 ansible_connection=local ansible_user=ubuntu
