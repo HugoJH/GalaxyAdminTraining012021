@@ -23,3 +23,4 @@
       become: true
       become_user: "{{ galaxy_user.name }}"
     - usegalaxy_eu.galaxy_systemd    
+    - galaxyproject.nginx
