@@ -31,7 +31,7 @@ miniconda_manage_dependencies: false
 galaxy_config:
   galaxy:
     brand: "🧬🔬🚀"
-    admin_users: admin@example.org
+    admin_users: "{{ admin_users_secret }}"
     database_connection: "postgresql:///galaxy?host=/var/run/postgresql"
     file_path: /data
     check_migrate_tools: false
