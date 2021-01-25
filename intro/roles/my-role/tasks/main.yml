@@ -1,5 +1,5 @@
 ---
 - name: Copy a file to the remote host
-  copy:
-    src: test.txt
-    dest: /tmp/test.txt
+  template:
+    src: test.ini.j2
+    dest: /tmp/test.ini
