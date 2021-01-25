@@ -5,6 +5,13 @@
     - name: Install Dependencies
       package:
         name: ['acl', 'bzip2', 'git', 'make', 'python3-psycopg2', 'tar', 'virtualenv']
+  handlers:
+    - name: Restart Galaxy
+      systemd:
+        name: galaxy
+        state: restarted
+
+
   roles:
     - galaxyproject.postgresql
     - role: natefoo.postgresql_objects
@@ -15,3 +22,4 @@
     - role: uchida.miniconda
       become: true
       become_user: "{{ galaxy_user.name }}"
+    - usegalaxy_eu.galaxy_systemd    

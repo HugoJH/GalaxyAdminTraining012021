@@ -62,3 +62,9 @@ galaxy_config:
       - lib/galaxy/main.py
       - lib/galaxy/main.py
     farm: job-handlers:1,2
+
+
+# systemd
+galaxy_systemd_mode: mule
+galaxy_zergpool_listen_addr: 127.0.0.1:8080
+galaxy_restart_handler_name: "Restart Galaxy"
