@@ -18,6 +18,8 @@
 
 
   roles:
+    - galaxyproject.repos
+    - galaxyproject.slurm
     - galaxyproject.postgresql
     - role: natefoo.postgresql_objects
       become: true
@@ -32,3 +34,8 @@
     - usegalaxy_eu.galaxy_systemd    
     - galaxyproject.nginx
     - galaxyproject.cvmfs
+
+  post_tasks:
+    - name: Install slurm-drmaa
+      package:
+        name: slurm-drmaa1
