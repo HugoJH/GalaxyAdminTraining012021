@@ -34,8 +34,15 @@
         <destination id="dtd" runner="dynamic">
             <param id="type">dtd</param>
         </destination>
+        <destination id="dynamic_cores_time" runner="dynamic">
+            <param id="type">python</param>
+            <param id="function">dynamic_cores_time</param>
+        </destination>
     </destinations>
+    <resources>
+      <group id="testing">cores,time</group>
+    </resources>
     <tools>
-      <tool id="testing" destination="dtd"/>
+      <tool id="testing" destination="dynamic_cores_time" resources="testing"/>
     </tools>
 </job_conf>

@@ -30,6 +30,7 @@ miniconda_manage_dependencies: false
 
 galaxy_config:
   galaxy:
+    job_resource_params_file: "{{ galaxy_config_dir }}/job_resource_params_conf.xml"
     tool_destinations_config_file: "{{ galaxy_config_dir }}/tool_destinations.yml"
     library_import_dir: /libraries/admin
     user_library_import_dir: /libraries/user
@@ -71,6 +72,8 @@ galaxy_config:
     farm: job-handlers:1,2
 
 galaxy_config_templates:
+  - src: templates/galaxy/config/job_resource_params_conf.xml.j2
+    dest: "{{ galaxy_config.galaxy.job_resource_params_file }}"
   - src: templates/galaxy/config/job_conf.xml.j2
     dest: "{{ galaxy_config.galaxy.job_config_file }}"
   - src: templates/galaxy/config/container_resolvers_conf.xml.j2
@@ -87,6 +90,7 @@ galaxy_local_tools:
   - testing.xml
 galaxy_dynamic_job_rules:
   - my_rules.py
+  - map_resources.py
 
 # systemd
 galaxy_systemd_mode: mule
